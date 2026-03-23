@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CAREER_TIMELINE, RENAISSANCE_SUBTITLES, DEFAULT_SUBTITLES } from '../data/constants';
 import { KATERRA_EXPANDED, KOVA_EXPANDED } from '../data/expansion';

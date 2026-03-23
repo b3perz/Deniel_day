@@ -188,7 +188,7 @@ export const DELIVERY_MODELS = [
     detail: 'Someone else designed it. SC redesigns it better and builds it. Key proof points:',
     projects: [
       { name: 'Gaylord Pool', stat: '$5M redesign in 2 weeks' },
-      { name: 'Peel Police', stat: '40% cost savings' },
+      { name: 'Peel Regional Police', stat: '40% cost savings' },
       { name: 'Apple Raleigh', stat: 'Efficiency at scale' },
     ],
   },

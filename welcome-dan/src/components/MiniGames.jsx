@@ -119,7 +119,7 @@ function shuffleQuestions() {
 }
 
 export function ExpandedQuiz() {
-  const [questions, setQuestions] = useState(shuffleQuestions);
+  const [questions, setQuestions] = useState(() => shuffleQuestions());
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState(null);
