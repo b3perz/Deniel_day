@@ -9,38 +9,33 @@ const EMAILS = [
   },
   {
     id: 2, from: 'Ben Epp', email: 'bepp@structurecraft.com',
-    subject: 'Your first week', time: 'Mon 8:30 AM', unread: true, priority: false,
-    body: 'Dan \u2014 welcome to SC. I\'ve set up your Notion access, HubSpot login, and Teams account. InDesign templates are in the shared drive \u2014 I\'ll walk you through them tomorrow. Also, check your browser for a little something the team put together. See you Monday. \u2014 Ben',
+    subject: 'Hey \u2014 welcome', time: 'Mon 8:30 AM', unread: true, priority: false,
+    body: 'Hey Dan \u2014 welcome to SC. I\'m Ben, BD Coordinator out of Abbotsford. We\'ll be working together a lot. I\'ve saved a few completed proposals in Notion for you to look at when you get a chance \u2014 one consulting, one engineer-build, one SOQ. Don\'t worry about understanding everything yet, just get a feel for how we present ourselves. Hit me up on Teams if you need anything. \u2014 Ben',
   },
   {
-    id: 3, from: 'Ben Epp', email: 'bepp@structurecraft.com',
-    subject: 'Reading material', time: 'Mon 9:15 AM', unread: true, priority: false,
-    body: 'Before your first proposal lands, read these three completed proposals I\'ve saved in Notion. One consulting, one engineer-build, one SOQ. Don\'t worry about understanding everything yet \u2014 just get a feel for how we present ourselves.',
-  },
-  {
-    id: 4, from: 'Leif Johnson', email: 'ljohnson@structurecraft.com',
+    id: 3, from: 'Leif Johnson', email: 'ljohnson@structurecraft.com',
     subject: 'Quick one', time: 'Mon 9:47 AM', unread: true, priority: false,
     body: 'Hey Dan, good to have you in Seattle. I\'ve got a consulting proposal that just came in \u2014 nothing urgent yet but I\'ll loop you in tomorrow so you can see how we handle these. Welcome to the team.',
   },
   {
-    id: 5, from: 'SC IT', email: 'it@structurecraft.com',
+    id: 4, from: 'SC IT', email: 'it@structurecraft.com',
     subject: 'Account Setup Complete', time: 'Mon 10:00 AM', unread: true, priority: false, attachment: true,
     body: 'Welcome to StructureCraft! Your accounts have been created:\n\n\u2022 Email: dkristiansen@structurecraft.com\n\u2022 Teams: Active\n\u2022 Notion: Invite sent\n\u2022 HubSpot: Access granted\n\u2022 P: Drive VPN: Instructions attached (may require 2-3 attempts)\n\nPlease note your name may appear as \'Daniel\' in some systems. We are aware of the issue. A fix is scheduled for Q4 2027.',
   },
   {
-    id: 6, from: 'Harrison & Associates Architects', email: 'proposals@harrisonarch.com',
+    id: 5, from: 'Harrison & Associates Architects', email: 'proposals@harrisonarch.com',
     subject: 'RFP \u2014 Cascade Mixed-Use Development', time: 'Mon 2:30 PM', unread: true, priority: true, attachment: true,
     body: 'Please find attached the Request for Proposals for structural engineering services for the Cascade project in Portland, OR. Proposals are due April 4, 2026.\n\nEvaluation criteria:\n\u2022 Firm qualifications and relevant experience (30%)\n\u2022 Key personnel and team structure (25%)\n\u2022 Project approach and methodology (25%)\n\u2022 Fee proposal (20%)\n\nPlease confirm your intent to respond by Wednesday.',
   },
   {
-    id: 7, from: 'Leif Johnson', email: 'ljohnson@structurecraft.com',
+    id: 6, from: 'Leif Johnson', email: 'ljohnson@structurecraft.com',
     subject: 'RE: RFP \u2014 Cascade Mixed-Use Development', time: 'Mon 3:12 PM', unread: true, priority: false,
     body: 'Dan \u2014 see the attached. What do you think? I have a call with the architect Thursday. Let\'s do a quick go/no-go before then. Can you do an initial read-through and flag the key requirements?\n\nI think this is a consulting play \u2014 they\'re not asking for build services. But read the scope carefully, sometimes they bury construction management language in the appendix.\n\n\u2014 Leif',
   },
   {
-    id: 8, from: 'Ben Epp', email: 'bepp@structurecraft.com',
+    id: 7, from: 'Ben Epp', email: 'bepp@structurecraft.com',
     subject: 'RE: RFP \u2014 Cascade Mixed-Use Development', time: 'Mon 3:25 PM', unread: true, priority: false,
-    body: 'Leif forwarded this to both of us. I\'ll do the initial read-through with you tomorrow and we\'ll build the compliance matrix together. Good first one to learn on. Don\'t stress.',
+    body: 'Saw Leif forwarded the Cascade RFP. Happy to walk through the compliance matrix with you if you want a second set of eyes. Good first one to learn on.',
   },
 ];
 

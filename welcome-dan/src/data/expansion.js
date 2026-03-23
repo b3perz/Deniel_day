@@ -43,10 +43,9 @@ export const KOVA_EXPANDED = {
 // ========== CREW EXPANDED ==========
 export const CREW_EXPANDED = {
   'Ben Epp': {
-    communication: 'Direct. If something needs fixing, he\'ll tell you. If something\'s good, he\'ll also tell you.',
-    howToWork: 'Ask questions. The more you ask in the first month, the faster you ramp. He\'d rather answer 50 questions now than fix 50 mistakes later.',
-    cares: 'Quality, efficiency, and making SC\'s proposals better than everyone else\'s. Also AI, mass timber innovation, and skiing.',
-    proTip: 'He built this entire website for your first day. That should tell you something about the kind of team you\'re joining.',
+    communication: 'Teams or email, either works. Usually quick to respond.',
+    howToWork: 'Ask questions early. He\'d rather walk you through something once than have you guess and redo it later.',
+    overlap: 'You\'re both doing BD work across offices. Coordinate on content, templates, and proposal schedules so you\'re not duplicating effort.',
   },
   'Gerald Epp': {
     communication: 'Email for formal requests. Teams for quick questions. In person for anything strategic. Does not like surprises. If bad news exists, deliver it early with a plan.',

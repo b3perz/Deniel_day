@@ -8,7 +8,7 @@ export const BOOT_LINES = [
   { text: '> ...', delay: 300 },
   { text: '> ...14 VARIANTS DETECTED', delay: 50 },
   { text: '> DEPLOYING WELCOME SEQUENCE', delay: 55 },
-  { text: '> ASSIGNING HANDLER: BEN EPP \u2014 BD MANAGER', delay: 50 },
+  { text: '> ASSIGNING ONBOARDING CONTACT: BEN EPP \u2014 BD COORDINATOR', delay: 50 },
   { text: '> AGENT CODENAME: "DAN"', delay: 60 },
   { text: '> STATUS: ITCH \u2014 ABOUT TO BE SCRATCHED', delay: 50 },
 ];
@@ -213,10 +213,9 @@ export const LOADOUT_CARDS = [
 export const CREW_CARDS = [
   {
     name: 'Ben Epp',
-    title: 'YOUR MANAGER',
-    ability: 'Built this website instead of finishing a proposal',
-    briefing: 'Manager of Business Development. Your direct manager and primary trainer. Has been leading SC\'s proposals and marketing strategy for five years. Knows where everything is, how everything works, and why certain things are the way they are. Will walk you through your first proposals, introduce you to every engineer, and make sure you\'re set up to succeed. Based in Abbotsford but working closely with you across offices. If you have a question \u2014 process, politics, history, tools, people \u2014 start with Ben.',
-    hero: true,
+    title: 'BD COORDINATOR',
+    ability: 'Knows where the templates are',
+    briefing: 'Business Development Coordinator based in Abbotsford. Been doing proposals and BD support at SC for a while now, so he can show you the ropes \u2014 where things live in Notion, how the InDesign templates work, who to bug for content. You two will be working in parallel across offices. If you\'re stuck on something, he\'s a good first call.',
   },
   {
     name: 'Gerald Epp',
@@ -371,7 +370,7 @@ export const TICKER_ITEMS = [
   'Started career as a drafter \u2014 can actually read drawings, unlike most marketing people...',
   'InDesign daily user \u2014 finally, someone who won\'t suggest doing the proposal in PowerPoint...',
   'Survived Katerra \u2014 if he can survive that, he can survive a Friday 4pm RFP...',
-  'Ben built this website instead of finishing a real proposal \u2014 priorities...',
+  'Someone on the BD team built this website instead of finishing a real proposal \u2014 priorities...',
   'The P: drive has 80,000 photos waiting. None are tagged. The adventure begins...',
   'Current status: the itch is being scratched...',
 ];

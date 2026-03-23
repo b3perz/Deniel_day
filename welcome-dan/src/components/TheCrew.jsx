@@ -246,26 +246,13 @@ export default function TheCrew() {
             Know your team. Do not bring Gerald a problem without a solution.
           </p>
 
-          {/* ---- Row 1: Ben Epp -- full-width hero ---- */}
-          {ben && (
-            <div className="mb-6">
-              <CrewCard
-                member={ben}
-                accentColor={accentColor}
-                index={0}
-                variant="hero"
-                onOpenProfile={setProfileMember}
-              />
-            </div>
-          )}
-
-          {/* ---- Row 2: Gerald + Leif -- 2-col, large ---- */}
+          {/* ---- Row 1: Gerald + Leif -- 2-col, large ---- */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {gerald && (
               <CrewCard
                 member={gerald}
                 accentColor={accentColor}
-                index={1}
+                index={0}
                 onOpenProfile={setProfileMember}
               />
             )}
@@ -273,19 +260,19 @@ export default function TheCrew() {
               <CrewCard
                 member={leif}
                 accentColor={accentColor}
-                index={2}
+                index={1}
                 onOpenProfile={setProfileMember}
               />
             )}
           </div>
 
-          {/* ---- Row 3: Scott + Lucas -- 2-col, medium ---- */}
+          {/* ---- Row 2: Scott + Lucas -- 2-col ---- */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
             {scott && (
               <CrewCard
                 member={scott}
                 accentColor={accentColor}
-                index={3}
+                index={2}
                 onOpenProfile={setProfileMember}
               />
             )}
@@ -293,23 +280,31 @@ export default function TheCrew() {
               <CrewCard
                 member={lucas}
                 accentColor={accentColor}
-                index={4}
+                index={3}
                 onOpenProfile={setProfileMember}
               />
             )}
           </div>
 
-          {/* ---- Row 4: Dina -- single standard card ---- */}
-          {dina && (
-            <div className="max-w-md">
+          {/* ---- Row 3: Ben + Dina -- 2-col ---- */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+            {ben && (
+              <CrewCard
+                member={ben}
+                accentColor={accentColor}
+                index={4}
+                onOpenProfile={setProfileMember}
+              />
+            )}
+            {dina && (
               <CrewCard
                 member={dina}
                 accentColor={accentColor}
                 index={5}
                 onOpenProfile={setProfileMember}
               />
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </motion.section>
 
