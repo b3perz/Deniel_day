@@ -4,5 +4,5 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/Deniel_day/',
+  base: process.env.GITHUB_ACTIONS ? '/Deniel_day/' : '/',
 })
