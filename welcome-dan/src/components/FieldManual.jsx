@@ -6,7 +6,7 @@ import {
   BINGO_GRID, RENAISSANCE_SUBTITLES, DEFAULT_SUBTITLES,
 } from '../data/constants';
 import { useApp } from '../contexts/AppContext';
-import { DeadlineDash, ExpandedQuiz, NameThatProject } from './MiniGames';
+import { DeadlineDash, ExpandedQuiz, NameThatProject, ProposalMadLibs } from './MiniGames';
 
 // ==================== HAZARDS TAB ====================
 function HazardCard({ hazard, accentColor }) {
@@ -48,13 +48,13 @@ function HazardCard({ hazard, accentColor }) {
                   className="relative inline"
                 >
                   <span className={`transition-all duration-300 ${massTimbered ? 'line-through text-red-400' : ''}`}>
-                    structural engineering and design-build
+                    structural engineering and engineer-build
                   </span>
                 </span>
                 {' '}firm. Gerald chose "Structure" not "Timber." Override your Katerra wiring.
                 {massTimbered && (
                   <span className="text-teal-400 ml-1 animate-pulse">
-                    structural engineering and design-build
+                    structural engineering and engineer-build
                   </span>
                 )}
               </>
@@ -532,6 +532,16 @@ export default function FieldManual() {
         subtitle="Can you match the codename to the real project? Prove it."
       >
         <NameThatProject />
+      </Section>
+
+      {/* 8. PROPOSAL MAD LIBS */}
+      <Section
+        id="madlibs"
+        bg="bg-slate-800/30"
+        title="PROPOSAL MAD LIBS"
+        subtitle="Generate a proposal Gerald will definitely have questions about."
+      >
+        <ProposalMadLibs />
       </Section>
     </motion.div>
   );

@@ -19,7 +19,9 @@ export default function SeattleClock() {
   }, []);
 
   return (
-    <div className="hidden lg:flex items-center gap-1.5 text-[9px] font-mono text-slate-600">
+    <div className="hidden lg:flex items-center gap-3 text-[9px] font-mono text-slate-600">
+      <span>Day 1 of &#8734;</span>
+      <span className="text-slate-700">|</span>
       <span>SEATTLE</span>
       <span className="text-slate-400">{time}</span>
     </div>

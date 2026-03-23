@@ -221,25 +221,25 @@ export const CREW_CARDS = [
     name: 'Gerald Epp',
     title: 'THE FOUNDER',
     ability: 'Finds the typo on page 14',
-    briefing: 'President. Founded SC in 1998. Final decision-maker on all significant pursuits. Reads every word. Will edit your semicolons. Do not bring problems without recommendations. Do not bring drafts you haven\'t proofread.',
+    briefing: 'President & Chief Engineer. Founded SC in 1998. Final decision-maker on all significant pursuits. Reads every word \u2014 technical and marketing. Will edit your semicolons. Do not bring problems without recommendations. Do not bring drafts you haven\'t proofread.',
   },
   {
     name: 'Leif Johnson',
     title: 'THE OPERATOR',
     ability: '"Can you turn this around by tomorrow?"',
-    briefing: 'Engineering Director, Seattle. 70% BD, 30% engineering. Your closest collaborator. Leads consulting proposals and major US pursuits. Technical, client-savvy, great presenter. Primary source of scope input and last-minute requests.',
+    briefing: 'Structural Engineering Director \u2014 Seattle. Spends the majority of his time on BD pursuits and client relationships. Your closest collaborator. Leads consulting proposals and major US pursuits. Technical, client-savvy, great presenter. Primary source of scope input and last-minute requests.',
   },
   {
     name: 'Scott Crawford',
     title: 'THE EYE',
     ability: 'Detects misaligned margins from across the room',
-    briefing: 'Director of Creative Design, Seattle. If your layout has one spacing inconsistency, Scott sees it. Show him work before it goes to Gerald. He is your quality gate.',
+    briefing: 'Director of Design Strategy, Seattle. If your layout has one spacing inconsistency, Scott sees it. Show him work before it goes to Gerald. He is your quality gate.',
   },
   {
     name: 'Lucas Epp',
     title: 'THE BRAIN',
     ability: 'Contains more structural engineering knowledge than your LinkedIn network',
-    briefing: 'VP. Technical thought leader. Best content comes from conversation, not email. Sit with him, ask questions, take notes, write it yourself.',
+    briefing: 'Vice President & Head of Engineering. Technical thought leader. Best content comes from conversation, not email. Sit with him, ask questions, take notes, write it yourself.',
   },
   {
     name: 'Dina Yousif',
@@ -282,7 +282,7 @@ export const HAZARD_CARDS = [
     id: 'mass-timber',
     title: 'The Mass Timber Reflex',
     front: 'You call SC a "mass timber company."',
-    back: 'SC is a structural engineering and design-build firm. Gerald chose "Structure" not "Timber." Override your Katerra wiring.',
+    back: 'SC is a structural engineering and engineer-build firm. Gerald chose "Structure" not "Timber." Override your Katerra wiring.',
     hasMassTimberEasterEgg: true,
   },
 ];
@@ -372,6 +372,10 @@ export const TICKER_ITEMS = [
   'Survived Katerra \u2014 if he can survive that, he can survive a Friday 4pm RFP...',
   'Someone on the BD team built this website instead of finishing a real proposal \u2014 priorities...',
   'The P: drive has 80,000 photos waiting. None are tagged. The adventure begins...',
+  'The engineer said "it\'s just a quick markup"... that was 3 hours ago...',
+  'If you\'re reading this, the P: drive search is still running...',
+  'Somewhere in Abbotsford, Gerald is editing a semicolon right now...',
+  'Fun fact: SC has completed projects on every continent except Antarctica. Give it time...',
   'Current status: the itch is being scratched...',
 ];
 

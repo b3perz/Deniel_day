@@ -4,10 +4,18 @@ import { DOSSIER_FIELDS, NAME_MISSPELLINGS, CHARACTER_CLASSES } from '../data/co
 import { MULTICLASS_SUBCLASSES } from '../data/expansion';
 import { useApp } from '../contexts/AppContext';
 
+const NAME_MILESTONES = {
+  10: "You're getting the hang of this.",
+  25: "At this rate, IT will never fix your email display name.",
+  50: "Achievement-level commitment. You're ready for your first all-hands.",
+  100: "You have now generated more name variants than SC's internal systems. Impressive.",
+};
+
 function NameGenerator() {
   const [available, setAvailable] = useState([...NAME_MISSPELLINGS]);
   const [currentName, setCurrentName] = useState(null);
   const [count, setCount] = useState(0);
+  const [milestone, setMilestone] = useState(null);
   const { playThunk } = useApp();
 
   const generate = useCallback(() => {
@@ -20,9 +28,14 @@ function NameGenerator() {
     const next = pool.filter((_, i) => i !== idx);
     setAvailable(next);
     setCurrentName(name);
-    setCount(c => c + 1);
+    const newCount = count + 1;
+    setCount(newCount);
     playThunk();
-  }, [available, playThunk]);
+    if (NAME_MILESTONES[newCount]) {
+      setMilestone(NAME_MILESTONES[newCount]);
+      setTimeout(() => setMilestone(null), 3000);
+    }
+  }, [available, count, playThunk]);
 
   return (
     <div className="mt-8 text-center">
@@ -45,8 +58,21 @@ function NameGenerator() {
       )}
 
       <p className="mt-3 text-slate-500 text-sm font-mono">
-        SC will get your name right approximately 34% of the time.
+        Misspellings generated: {count}
       </p>
+
+      <AnimatePresence>
+        {milestone && (
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            className="mt-2 text-teal-400 text-xs font-mono"
+          >
+            {milestone}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

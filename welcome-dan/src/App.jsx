@@ -18,6 +18,7 @@ import SoundToggle from './components/SoundToggle';
 import InterceptedQuote from './components/InterceptedQuote';
 import AmbientTransmissions from './components/AmbientTransmissions';
 import AchievementToast from './components/AchievementToast';
+import GeraldNotification from './components/GeraldNotification';
 import OfficeMap from './components/OfficeMap';
 import { useKonamiCode, KonamiDesktop } from './components/KonamiDesktop';
 import {
@@ -91,7 +92,7 @@ function AppContent() {
               />
             </AnimatePresence>
 
-            <WhyYou />
+            {activePage === 'dossier' && <WhyYou />}
             <WelcomeSection />
 
             <footer className="py-6 px-4 text-center bg-slate-950">
@@ -105,6 +106,7 @@ function AppContent() {
           <InterceptedQuote pageId={activePage} />
           <AmbientTransmissions />
           <AchievementToast />
+          <GeraldNotification />
         </>
       )}
 

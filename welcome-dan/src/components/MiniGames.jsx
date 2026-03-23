@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useApp } from '../contexts/AppContext';
 
 // ==================== DEADLINE DASH ====================
-const TYPING_TEXT = 'StructureCraft is a vertically integrated structural engineering and design-build firm specializing in complex structures across timber, steel, glass, concrete, and hybrid systems. With offices in Abbotsford, Seattle, and Trento, we partner with world-renowned architects and developers to engineer and construct structures that are elegant in their own right and serve the greater good of their communities.';
+const TYPING_TEXT = 'StructureCraft is a vertically integrated structural engineering and engineer-build firm specializing in complex structures across timber, steel, glass, concrete, and hybrid systems. With offices in Abbotsford, Vancouver, Seattle, and Trento, we partner with world-renowned architects and developers to engineer and construct structures that are elegant in their own right and serve the greater good of their communities.';
 
 function getTypingResult(seconds) {
   if (seconds < 60) return 'Gerald is impressed. Gerald is never impressed.';
@@ -104,14 +104,14 @@ export function DeadlineDash() {
 
 // ==================== EXPANDED QUIZ ====================
 const EXPANDED_QUESTIONS = [
-  { question: 'A New York architect needs structural engineering for a 12-story mass timber tower. No construction scope.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 0, explanation: 'Pure engineering services. No shop, no site. SC provides design and construction documents only.' },
-  { question: 'An Atlanta GC has a steel canopy design but wants timber, cheaper and faster. They want SC to redesign and build.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 2, explanation: 'Someone else designed it. SC redesigns it better in timber and builds it. This is where the money is.' },
-  { question: 'A Vancouver architect wants SC to engineer a timber structure and fabricate and install from Abbotsford.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 1, explanation: 'SC engineers it AND builds it from their own shop. Full vertical integration. Brain and muscle.' },
   { question: 'An owner in Singapore wants SC to design a timber pavilion. A local GC builds it. SC ships DowelLam from Abbotsford.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 0, explanation: 'SC\'s role is engineering + DowelLam supply. They\'re not managing construction on site. Consulting with product supply.' },
   { question: 'A developer in Toronto completed SD with another engineer. Wants SC to take over for DD/CD, then fabricate and install.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 2, explanation: 'SC redesigns from DD forward and builds. Another firm started the design \u2014 SC makes it better and delivers.' },
   { question: 'A university issues a public RFP for a student center. SF330 required. Engineering services only, construction is separate.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 0, explanation: 'Public sector, SF330 format, no build component. Pure consulting play.' },
   { question: 'A GC calls Gerald: "We need to bid next week. Architect specified steel but we think timber is cheaper. Can you give us a number?"', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 2, explanation: 'GC-driven. SC redesigns the steel structure in timber and prices the build. Classic value engineer-build.' },
   { question: 'An architecture firm in Italy is designing a cultural center. They want SC to engineer the timber roof and manage fabrication from Trento.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 1, explanation: 'SC\'s Italy office handles design + fabrication. Full engineer-build from the Trento office.' },
+  { question: 'A Seattle developer hires SC from day one to engineer and build the timber structure for a new office tower. SC designs it and fabricates from Abbotsford.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 1, explanation: 'SC is involved from the start \u2014 engineering the structure and building it. No one else designed it. Classic engineer-build.' },
+  { question: 'A museum in London wants SC to peer-review another firm\'s timber connection design. No construction role.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 0, explanation: 'Peer review is pure consulting. SC provides engineering expertise only \u2014 no fabrication, no installation.' },
+  { question: 'A CM firm in Denver has a concrete parking structure design. They want SC to propose a mass timber alternative and build it if the numbers work.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 2, explanation: 'The original design exists in another material. SC proposes an alternative and delivers. Value engineer-build.' },
 ];
 
 function shuffleQuestions() {
@@ -199,10 +199,10 @@ export function ExpandedQuiz() {
 // ==================== NAME THAT PROJECT ====================
 const PROJECT_ROUNDS = [
   { desc: 'Curved intersecting dome structures, gridshell geometry, botanical setting', svg: 'M20,80 Q50,10 80,80 M30,80 Q60,20 90,70', color: '#22c55e', options: ['T3 Minneapolis', 'Taiyuan Botanical Garden', 'Barbados NPAC', 'IMTC Pavilion'], correct: 1 },
-  { desc: 'Multi-story rectangular office building, exposed timber frame, urban setting', svg: 'M20,80 L20,20 L80,20 L80,80 M30,30 L30,70 M50,30 L50,70 M70,30 L70,70', color: '#3b82f6', options: ['T3 Minneapolis', 'Apple Raleigh', 'Bloomberg Center', 'Peel Police HQ'], correct: 0 },
+  { desc: 'Multi-story rectangular office building, exposed timber frame, urban setting', svg: 'M20,80 L20,20 L80,20 L80,80 M30,30 L30,70 M50,30 L50,70 M70,30 L70,70', color: '#3b82f6', options: ['T3 Minneapolis', 'Apple Raleigh', 'Bloomberg Center', 'Peel Regional Police'], correct: 0 },
   { desc: 'Sweeping tropical performance venue, open-air, warm climate', svg: 'M10,70 Q50,10 90,70 M20,70 Q50,25 80,70', color: '#f59e0b', options: ['Assembly Atlanta', 'Barbados National Performing Arts Centre', 'T3 Nashville', 'Gaylord Pool'], correct: 1 },
   { desc: 'Shell-like bandshell structure, bending-active DLT, event stage', svg: 'M15,80 Q30,20 50,40 Q70,60 85,20', color: '#ef4444', options: ['IMTC Pavilion', 'Taiyuan Botanical Garden', 'Assembly Atlanta', 'T3 Sterling Road'], correct: 2 },
-  { desc: 'Institutional building with timber structural elements, police headquarters', svg: 'M15,80 L15,30 L50,15 L85,30 L85,80 M25,80 L25,40 M75,80 L75,40', color: '#a855f7', options: ['Apple Raleigh', 'Bloomberg Center', 'Peel Police HQ', 'T3 Atlanta'], correct: 2 },
+  { desc: 'Institutional building with timber structural elements, police headquarters', svg: 'M15,80 L15,30 L50,15 L85,30 L85,80 M25,80 L25,40 M75,80 L75,40', color: '#a855f7', options: ['Apple Raleigh', 'Bloomberg Center', 'Peel Regional Police', 'T3 Atlanta'], correct: 2 },
 ];
 
 export function NameThatProject() {
@@ -276,6 +276,73 @@ export function NameThatProject() {
           <button onClick={next} className="px-6 py-2 font-mono text-xs border border-teal-400 text-teal-400 rounded hover:bg-teal-400/10">
             {round < 4 ? 'Next Round' : 'See Results'}
           </button>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
+// ==================== PROPOSAL MAD LIBS ====================
+const MAD_LIB_FIELDS = [
+  { label: 'Enter an adjective', key: 'adj1' },
+  { label: 'Enter a building type', key: 'building' },
+  { label: 'Enter a city', key: 'city' },
+  { label: 'Enter a number', key: 'num' },
+  { label: 'Enter an emotion', key: 'emotion' },
+  { label: 'Enter a material', key: 'material' },
+];
+
+export function ProposalMadLibs() {
+  const [inputs, setInputs] = useState({});
+  const [result, setResult] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  const allFilled = MAD_LIB_FIELDS.every(f => inputs[f.key]?.trim());
+
+  const generate = () => {
+    const { adj1, building, city, num, emotion, material } = inputs;
+    setResult(
+      `StructureCraft is pleased to submit our ${adj1} proposal for the ${building} in ${city}. Our team of ${num} structural engineers brings a ${emotion} commitment to engineering excellence. The proposed structure features ${material} framing with integrated connections that showcase our engineer-build delivery model. We are confident this ${adj1} approach will result in a ${building} that the community will cherish for generations. Our fee for this work is $${(parseInt(num) || 1) * 100000}, which we believe reflects the ${emotion} value we bring to every project.`
+    );
+    setSubmitted(false);
+  };
+
+  const reset = () => { setInputs({}); setResult(null); setSubmitted(false); };
+
+  return (
+    <div className="max-w-2xl mx-auto">
+      {!result ? (
+        <div className="space-y-4">
+          {MAD_LIB_FIELDS.map(f => (
+            <div key={f.key} className="flex items-center gap-4">
+              <label className="text-slate-400 text-sm w-44 shrink-0 text-right">{f.label}:</label>
+              <input type="text" value={inputs[f.key] || ''} onChange={e => setInputs(p => ({ ...p, [f.key]: e.target.value }))}
+                className="flex-1 bg-slate-800 border border-slate-700 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-400" />
+            </div>
+          ))}
+          <div className="text-center mt-6">
+            <button onClick={generate} disabled={!allFilled}
+              className="px-8 py-3 font-mono text-sm uppercase tracking-wider border-2 border-teal-400 text-teal-400 rounded-lg hover:bg-teal-400/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed">
+              Generate Proposal
+            </button>
+          </div>
+        </div>
+      ) : (
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+          <div className="bg-slate-800 border border-slate-700 rounded-lg p-8">
+            <div className="text-[10px] font-mono text-teal-400 uppercase tracking-wider mb-4">SC PROPOSAL \u2014 CONFIDENTIAL</div>
+            <p className="text-slate-200 text-sm leading-[1.8]">{result}</p>
+          </div>
+          <div className="flex gap-3 justify-center mt-6">
+            <button onClick={reset}
+              className="px-6 py-2 text-xs font-mono border border-teal-400 text-teal-400 rounded hover:bg-teal-400/10">
+              Generate Another
+            </button>
+            <button onClick={() => setSubmitted(true)} disabled={submitted}
+              className="px-6 py-2 text-xs font-mono border border-amber-400 text-amber-400 rounded hover:bg-amber-400/10 disabled:opacity-50">
+              {submitted ? 'Gerald: "See me."' : 'Submit to Gerald'}
+            </button>
+          </div>
         </motion.div>
       )}
     </div>

@@ -5,11 +5,11 @@ export default function NewsTicker() {
   const doubled = text + '  \u2022  ' + text;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-slate-950 border-t border-slate-800 overflow-hidden h-8 flex items-center">
+    <div className="fixed bottom-0 left-0 right-0 z-40 bg-slate-950 border-t border-slate-800 overflow-hidden h-8 flex items-center group">
       <div
-        className="whitespace-nowrap font-mono text-xs text-slate-500"
+        className="whitespace-nowrap font-mono text-xs text-slate-500 group-hover:[animation-play-state:paused]"
         style={{
-          animation: 'ticker-scroll 60s linear infinite',
+          animation: 'ticker-scroll 90s linear infinite',
           willChange: 'transform',
         }}
       >

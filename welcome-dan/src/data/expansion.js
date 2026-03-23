@@ -110,10 +110,10 @@ export const NOTION_PAGES = {
   'Project Sheets': [
     { name: 'T3 Minneapolis', status: 'Complete', lastEdited: 'Mar 2024' },
     { name: 'Assembly Atlanta', status: 'In Progress', lastEdited: 'Feb 2026' },
-    { name: 'Bloomberg Center', status: 'Complete', lastEdited: 'Jan 2024' },
-    { name: 'Peel Police HQ', status: 'Complete', lastEdited: 'Oct 2023' },
+    { name: 'Bloomberg Center (Johns Hopkins)', status: 'Complete', lastEdited: 'Jan 2024' },
+    { name: 'Peel Regional Police', status: 'Complete', lastEdited: 'Oct 2023' },
     { name: 'Apple Raleigh', status: '[NEEDS UPDATE]', lastEdited: 'Oct 2023' },
-    { name: 'T3 Atlanta (Stonemont)', status: 'Complete', lastEdited: 'Nov 2024' },
+    { name: 'T3 Atlanta', status: 'Complete', lastEdited: 'Nov 2024' },
     { name: 'Gaylord Pool', status: 'Complete', lastEdited: 'Sep 2024' },
     { name: 'IMTC 2026 Pavilion', status: 'In Progress', lastEdited: 'Mar 2026' },
     { name: 'Taiyuan Botanical Garden', status: 'Complete', lastEdited: 'Jun 2023' },
@@ -127,7 +127,7 @@ export const NOTION_PAGES = {
     { name: 'Patrick Falkner, PE', note: 'Last updated: 2023. Needs review.' },
   ],
   'Boilerplate': {
-    text: 'StructureCraft is a structural engineering and design-build firm specializing in innovative timber, steel, glass, and hybrid structures. Founded in 1998, SC has delivered award-winning projects across North America and internationally.',
+    text: 'StructureCraft is a structural engineering and engineer-build firm specializing in innovative timber, steel, glass, and hybrid structures. Founded in 1998, SC has delivered award-winning projects across North America and internationally.',
     note: 'Three versions exist. Nobody knows which is current.',
     tracked: [
       { original: 'specializing in innovative timber', replacement: 'with deep expertise in mass timber' },
@@ -139,7 +139,7 @@ export const NOTION_PAGES = {
     { pursuit: 'Microsoft Campus Pavilion', client: 'Microsoft/LMN', status: 'Proposal Submitted', dueDate: 'Mar 2026', lead: 'Gerald' },
     { pursuit: 'Portland CLT Office Tower', client: 'Hacker Architects', status: 'Go/No-Go', dueDate: 'TBD', lead: 'Leif' },
     { pursuit: 'University of Washington Fieldhouse', client: 'UW/Mahlum', status: '???', dueDate: '', lead: '' },
-    { pursuit: 'IMTC 2026 Pavilion (Design-Build)', client: 'SC/Lake Flato', status: 'In Production', dueDate: 'N/A', lead: 'Gerald' },
+    { pursuit: 'IMTC 2026 Pavilion (Engineer-Build)', client: 'SC/Lake Flato', status: 'In Production', dueDate: 'N/A', lead: 'Gerald' },
   ],
 };
 
@@ -155,6 +155,7 @@ export const TOOLKIT_COMPARISON = [
   { tool: 'Bluebeam', danKnows: 'warn', danLabel: '"Been a while"', scUses: 'yes', scLabel: 'Used for markups', verdict: 'Relearn curve: 1 day' },
   { tool: 'Claude', danKnows: 'warn', danLabel: 'Basic', scUses: 'yes', scLabel: 'Heavy use', verdict: 'Adopt or get left behind' },
   { tool: 'Deltek', danKnows: 'no', danLabel: 'But knows what it is', scUses: 'no', scLabel: '', verdict: 'Irrelevant but impressive that he knows' },
+  { tool: 'Coffee Machine', danKnows: 'warn', danLabel: 'TBD', scUses: 'yes', scLabel: 'Mission Critical', verdict: 'Locate immediately on Day 1' },
 ];
 
 // ========== INTEL: DELIVERY MODELS ==========
@@ -196,22 +197,22 @@ export const DELIVERY_MODELS = [
 // ========== INTEL: PORTFOLIO ==========
 export const PORTFOLIO_PROJECTS = [
   { name: 'T3 Minneapolis', location: 'Minneapolis, MN', desc: 'First modern mass timber office building in the US', why: 'The project that put mass timber office buildings on the map in North America', proposalNote: 'Reference for any US office/commercial mass timber project', bonusFact: 'The timber was sourced from Structurlam (now Mercer). The same supply chain Katerra was trying to build.' },
-  { name: 'T3 Atlanta (Stonemont)', location: 'Atlanta, GA', desc: 'Largest mass timber building in the Southeast US', why: 'Proves SC can deliver at massive scale in new markets', proposalNote: 'Reference for Southeast US projects or large-scale timber', bonusFact: null },
+  { name: 'T3 Atlanta', location: 'Atlanta, GA', desc: 'Largest mass timber building in the Southeast US', why: 'Proves SC can deliver at massive scale in new markets', proposalNote: 'Reference for Southeast US projects or large-scale timber', bonusFact: null },
   { name: 'T3 Sterling Road', location: 'Toronto, ON', desc: 'Major Canadian mass timber project', why: 'Shows SC\'s Canadian roots and cross-border capability', proposalNote: 'Reference for Canadian projects', bonusFact: null },
   { name: 'T3 Nashville', location: 'Nashville, TN', desc: 'Continuing the T3 series', why: 'Demonstrates repeat client relationships', proposalNote: 'Reference for multi-project developer relationships', bonusFact: null },
-  { name: 'Bloomberg Center (Cornell Tech)', location: 'New York, NY', desc: 'BIG/Shepley Bulfinch collaboration', why: 'High-profile architect collaboration at an Ivy League campus', proposalNote: 'Reference for high-design, high-profile institutional projects', bonusFact: null },
+  { name: 'Bloomberg Center (Johns Hopkins)', location: 'Baltimore, MD', desc: 'BIG/Shepley Bulfinch collaboration', why: 'High-profile architect collaboration at a world-class university', proposalNote: 'Reference for high-design, high-profile institutional projects', bonusFact: null },
   { name: 'Taiyuan Botanical Garden Domes', location: 'Taiyuan, China', desc: 'Delugan Meissl. Gridshell domes', why: 'International showcase of structural innovation', proposalNote: 'Reference for international projects, complex geometry, gridshells', bonusFact: null },
   { name: 'Barbados National Performing Arts Centre', location: 'Barbados', desc: 'Caribbean performing arts venue', why: 'Shows SC\'s global reach', proposalNote: 'Reference for international and cultural projects', bonusFact: null },
   { name: 'Assembly Atlanta (FIFA Bandshell)', location: 'Atlanta, GA', desc: 'DLT bending-active timber shell for FIFA World Cup', why: 'Currently in production. Cutting-edge DLT technology', proposalNote: 'Reference for innovation, DowelLam, bending-active structures', bonusFact: 'The bandshell is a bending-active DLT shell for the FIFA World Cup. Dan\'s first SC proposal might involve this.' },
   { name: 'IMTC 2026 Pavilion', location: 'Portland, OR', desc: 'Lake Flato collaboration. Bending-active DLT shell', why: 'SC\'s own design showcase at a major industry event', proposalNote: 'Reference for SC\'s design leadership and DowelLam capability', bonusFact: null },
   { name: 'Apple Raleigh', location: 'Raleigh, NC', desc: 'Efficiency at scale', why: 'Proof of value engineering capability', proposalNote: 'Reference for value engineer-build and corporate campuses', bonusFact: null },
-  { name: 'Peel Police HQ', location: 'Mississauga, ON', desc: '40% savings over original design', why: 'Value engineer-build poster child', proposalNote: 'Reference for cost savings, value engineering, institutional', bonusFact: '40% savings over the original design. This is what value engineer-build looks like in the real world.' },
+  { name: 'Peel Regional Police', location: 'Mississauga, ON', desc: '40% savings over original design', why: 'Value engineer-build poster child', proposalNote: 'Reference for cost savings, value engineering, institutional', bonusFact: '40% savings over the original design. This is what value engineer-build looks like in the real world.' },
   { name: 'Gaylord Pool', location: 'Various', desc: '$5M redesign in 2 weeks', why: 'Speed and ingenuity showcase', proposalNote: 'Reference for fast-turnaround value engineering', bonusFact: null },
 ];
 
 // ========== INTEL: BRAND RULES ==========
 export const BRAND_RULES = [
-  'SC is a structural engineering and design-build firm',
+  'SC is a structural engineering and engineer-build firm',
   'Timber is a core competency, not the identity',
   'SC works across timber, steel, glass, concrete, stone, and hybrid systems',
   '"Mass timber" never appears in taglines, hero text, or identity lines',
