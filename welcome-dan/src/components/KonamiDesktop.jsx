@@ -1,27 +1,26 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
 
 export function useKonamiCode() {
   const [active, setActive] = useState(false);
-  const [seq, setSeq] = useState([]);
+  const seqRef = useRef([]);
 
   useEffect(() => {
     const handler = (e) => {
+      if (active) return;
       const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-      setSeq(prev => {
-        const next = [...prev, key].slice(-10);
-        if (next.length === 10 && next.every((k, i) => k === KONAMI[i])) {
-          setActive(true);
-          return [];
-        }
-        return next;
-      });
+      const next = [...seqRef.current, key].slice(-10);
+      seqRef.current = next;
+      if (next.length === 10 && next.every((k, i) => k === KONAMI[i])) {
+        setActive(true);
+        seqRef.current = [];
+      }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, []);
+  }, [active]);
 
   return { konamiActive: active, setKonamiActive: setActive };
 }
@@ -67,6 +66,13 @@ const DESKTOP_ICONS = [
 export function KonamiDesktop({ active, onClose }) {
   const [openWindow, setOpenWindow] = useState(null);
   const [inSubfolder, setInSubfolder] = useState(false);
+
+  useEffect(() => {
+    if (!active) return;
+    const handler = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [active, onClose]);
 
   if (!active) return null;
 

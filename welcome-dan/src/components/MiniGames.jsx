@@ -114,11 +114,12 @@ const EXPANDED_QUESTIONS = [
   { question: 'An architecture firm in Italy is designing a cultural center. They want SC to engineer the timber roof and manage fabrication from Trento.', options: ['Consulting', 'Engineer-Build', 'Value Engineer-Build'], correct: 1, explanation: 'SC\'s Italy office handles design + fabrication. Full engineer-build from the Trento office.' },
 ];
 
+function shuffleQuestions() {
+  return [...EXPANDED_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, 5);
+}
+
 export function ExpandedQuiz() {
-  const [questions] = useState(() => {
-    const shuffled = [...EXPANDED_QUESTIONS].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, 5);
-  });
+  const [questions, setQuestions] = useState(shuffleQuestions);
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -136,12 +137,21 @@ export function ExpandedQuiz() {
 
   const next = () => {
     if (currentQ < 4) { setCurrentQ(q => q + 1); setSelected(null); setShowFeedback(false); }
-    else { setFinished(true); if (score + (selected === questions[currentQ]?.correct ? 0 : 0) >= 5) unlock('quiz-perfect'); }
+    else setFinished(true);
   };
 
   useEffect(() => {
     if (finished && score === 5) unlock('quiz-perfect');
   }, [finished, score, unlock]);
+
+  const reset = () => {
+    setQuestions(shuffleQuestions());
+    setCurrentQ(0);
+    setScore(0);
+    setSelected(null);
+    setShowFeedback(false);
+    setFinished(false);
+  };
 
   if (finished) {
     const results = ['Report to the shop.', 'Needs work.', 'Getting there.', 'Solid.', 'Impressive.', 'Gerald is cautiously optimistic.'];
@@ -149,7 +159,7 @@ export function ExpandedQuiz() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-8">
         <div className="text-5xl font-bold text-white mb-3">{score}/5</div>
         <p className="text-teal-400 text-sm">{results[score]}</p>
-        <button onClick={() => { setCurrentQ(0); setScore(0); setSelected(null); setShowFeedback(false); setFinished(false); }}
+        <button onClick={reset}
           className="mt-6 px-6 py-2 text-xs font-mono border border-teal-400 text-teal-400 rounded hover:bg-teal-400/10">
           New Round (5 random questions)
         </button>

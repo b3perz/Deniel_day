@@ -194,24 +194,31 @@ function QuizTab({ accentColor }) {
 
 // ==================== RFP GENERATOR TAB ====================
 function RFPColumn({ items, spinning, result }) {
+  const itemHeight = 96; // h-24 = 96px
+  const totalHeight = items.length * itemHeight;
+
   return (
-    <div className="flex-1 bg-slate-900 border border-slate-700 rounded-lg overflow-hidden h-24 relative">
+    <div className="flex-1 bg-slate-900 border border-slate-700 rounded-lg overflow-hidden relative" style={{ height: itemHeight }}>
       {spinning ? (
-        <motion.div
-          animate={{ y: [0, -400] }}
-          transition={{ duration: 1.5, ease: 'linear', repeat: Infinity }}
+        <div
           className="absolute inset-x-0"
+          style={{
+            animation: `rfp-spin 0.8s linear infinite`,
+          }}
         >
-          {[...items, ...items, ...items].map((item, i) => (
-            <div key={i} className="h-24 flex items-center justify-center px-3 text-xs text-slate-300 text-center">
+          <style>{`@keyframes rfp-spin { 0% { transform: translateY(0); } 100% { transform: translateY(-${totalHeight}px); } }`}</style>
+          {[...items, ...items].map((item, i) => (
+            <div key={i} className="flex items-center justify-center px-3 text-xs text-slate-300 text-center" style={{ height: itemHeight }}>
               {item}
             </div>
           ))}
-        </motion.div>
+        </div>
       ) : result !== null ? (
         <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          key={`result-${result}`}
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: 'spring', damping: 12, stiffness: 200 }}
           className="h-full flex items-center justify-center px-3 text-xs text-white text-center font-medium"
         >
           {items[result]}
