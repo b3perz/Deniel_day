@@ -2,12 +2,13 @@
 export const BOOT_LINES = [
   { text: '> STRUCTURECRAFT ONBOARDING PROTOCOL v2.6', delay: 50 },
   { text: '> INITIATING AGENT INTAKE...', delay: 60 },
-  { text: '> SCANNING RESUME... 0 SPECIFIC METRICS FOUND', delay: 40 },
+  { text: '> SCANNING RESUME... LOADED', delay: 40 },
   { text: '> CROSS-REFERENCING EMPLOYER HISTORY... [3 DEFUNCT]', delay: 45 },
   { text: '> VERIFYING NAME SPELLING...', delay: 70 },
   { text: '> ...', delay: 300 },
   { text: '> ...14 VARIANTS DETECTED', delay: 50 },
   { text: '> DEPLOYING WELCOME SEQUENCE', delay: 55 },
+  { text: '> ASSIGNING HANDLER: BEN EPP \u2014 BD MANAGER', delay: 50 },
   { text: '> AGENT CODENAME: "DAN"', delay: 60 },
   { text: '> STATUS: ITCH \u2014 ABOUT TO BE SCRATCHED', delay: 50 },
 ];
@@ -23,7 +24,7 @@ export const DOSSIER_FIELDS = [
   { label: 'Sibling Status', value: 'Two brothers. Both software engineers. Dan chose differently.' },
   { label: 'Self-Descriptors (Unverified)', value: 'Renaissance Man, Chameleon, Project Management Octopus' },
   { label: 'Previous Employer Status', value: '[REDACTED \u2014 SEE FILE KTR-2021]' },
-  { label: 'Stress Indicator', value: '"Even if stressed, nobody else will be able to tell"' },
+  { label: 'Stress Response', value: 'Unflappable. Will be tested.' },
 ];
 
 export const NAME_MISSPELLINGS = [
@@ -211,6 +212,13 @@ export const LOADOUT_CARDS = [
 // ========== ACT 5: THE CREW ==========
 export const CREW_CARDS = [
   {
+    name: 'Ben Epp',
+    title: 'YOUR MANAGER',
+    ability: 'Built this website instead of finishing a proposal',
+    briefing: 'Manager of Business Development. Your direct manager and primary trainer. Has been leading SC\'s proposals and marketing strategy for five years. Knows where everything is, how everything works, and why certain things are the way they are. Will walk you through your first proposals, introduce you to every engineer, and make sure you\'re set up to succeed. Based in Abbotsford but working closely with you across offices. If you have a question \u2014 process, politics, history, tools, people \u2014 start with Ben.',
+    hero: true,
+  },
+  {
     name: 'Gerald Epp',
     title: 'THE FOUNDER',
     ability: 'Finds the typo on page 14',
@@ -324,7 +332,7 @@ export const RFP_REQUIREMENTS = [
   'Include 37 mandatory forms',
   'SF330 Parts I and II required, plus supplemental but no additional pages',
   'Provide firm history since founding',
-  'Three references, none from current clients',
+  'Three project examples, none older than five years',
 ];
 
 export const RFP_DEADLINES = [
@@ -345,21 +353,26 @@ export const BINGO_GRID = [
 
 // ========== ACT 7: WHY YOU ==========
 export const WHY_YOU_PARAGRAPHS = [
-  'You build systems out of whatever tools are available. Smartsheets, Asana, duct tape. SC needs that.',
-  'Three people who\'ve worked with you said they\'d hire you again without hesitating. That almost never happens.',
-  'You took a pay cut and turned down two of the biggest architecture firms in Seattle to come scratch an itch you\'ve had since 2018. That tells us everything.',
+  'You\'ve spent years building systems out of Asana, Smartsheets, and sheer willpower for companies that kept selling, pivoting, or moving to Texas. SC isn\'t going anywhere.',
+  'You walked into your interview and called our delivery model "straightforward." Most people need it explained three times. You got it immediately.',
+  'You\'ve had the mass timber itch since Katerra. We\'ve got the shop, the engineers, and the projects. Let\'s go.',
 ];
 
-export const MARLO_QUOTE = 'Marlo said it best: "Often got it right, sometimes got it wrong, but never phased him."';
+export const WHY_YOU_CLOSER = 'Also, you willingly chose a job where you\'ll be hounding engineers for resume updates. That takes a specific kind of person. Welcome.';
 
 // ========== TICKER ==========
 export const TICKER_ITEMS = [
-  'Dan\'s resume contains zero specific metrics or project names...',
-  'Three references said "would hire again" with zero hesitation...',
-  'Peter called his attention to detail "annoying, a little too much sometimes" \u2014 highest compliment in proposal work...',
-  'Described SC\'s delivery model as "straightforward" \u2014 our recruiter called this "unusual"...',
-  'Said "adopt or get left behind" four times across two interviews \u2014 we\'re holding him to it...',
-  'Built infrastructure with "no fancy back-end software, just standard tools" \u2014 duct tape engineering...',
+  'Self-described renaissance man, chameleon, AND project management octopus \u2014 commit to one, Dan...',
+  'Described SC\'s delivery model as "straightforward" on first exposure \u2014 respect...',
+  'Said "adopt or get left behind" four times across two interviews \u2014 we\'re counting...',
+  'Built Asana automations and Smartsheets infrastructure with no fancy back-end software \u2014 resourceful...',
+  'Has been in AEC since 2017 \u2014 the long way around to mass timber, but he made it...',
+  'Speaks English, Russian, and Ukrainian \u2014 SC\'s most linguistically versatile BD hire...',
+  'Started career as a drafter \u2014 can actually read drawings, unlike most marketing people...',
+  'InDesign daily user \u2014 finally, someone who won\'t suggest doing the proposal in PowerPoint...',
+  'Survived Katerra \u2014 if he can survive that, he can survive a Friday 4pm RFP...',
+  'Ben built this website instead of finishing a real proposal \u2014 priorities...',
+  'The P: drive has 80,000 photos waiting. None are tagged. The adventure begins...',
   'Current status: the itch is being scratched...',
 ];
 

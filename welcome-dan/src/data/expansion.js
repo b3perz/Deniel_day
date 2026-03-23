@@ -1,54 +1,3 @@
-// ========== INTERCEPTED COMMUNICATIONS ==========
-export const INTERCEPTED_COMMS = [
-  {
-    from: 'Angela Lange (Recruiter)',
-    label: 'Pre-Screen Notes',
-    quotes: [
-      { text: 'Deniel was a pleasure to speak with \u2014 he is affable and friendly and clearly passionate about mass timber. He said that our design-build model is "straightforward" which is unusual, since it usually takes people some time to understand this concept.', redactWords: [5, 12] },
-      { text: 'Given his extensive experience in marketing and his desire to understand all aspects of business development, I could see him being more than a proposal coordinator.', redactWords: [3, 8] },
-    ],
-  },
-  {
-    from: 'Reference \u2014 Marlo',
-    label: 'Character Assessment',
-    quotes: [
-      { text: 'Often got it right, sometimes got it wrong, but never phased him.', redactWords: [] },
-      { text: 'He built out full Smartsheets infrastructure \u2014 ordering, procurement, CA.', redactWords: [7] },
-      { text: 'Would hire him back in a heartbeat.', redactWords: [] },
-    ],
-  },
-  {
-    from: 'Reference \u2014 Peter',
-    label: 'Performance Review',
-    quotes: [
-      { text: 'Attention to detail: annoying. A little too much sometimes.', redactWords: [] },
-      { text: 'Self-sustained. Rarely came to me for rescue missions. Figured it out.', redactWords: [6] },
-      { text: 'Would hire him again. Absolutely.', redactWords: [] },
-    ],
-  },
-  {
-    from: 'Reference \u2014 Brighid',
-    label: 'Capability Assessment',
-    quotes: [
-      { text: 'Nice combo of managing tasks and doing the work honestly.', redactWords: [4] },
-      { text: 'Built program and project management system in Smartsheets. Multi-layer tracking system.', redactWords: [] },
-      { text: 'Pretty darned adept. Fresh critical mind. Quick learner, asks good questions.', redactWords: [1] },
-      { text: 'His detailed mind used to slow him down, now it makes him accurate.', redactWords: [] },
-    ],
-  },
-];
-
-// ========== TRAITS ASSESSMENT ==========
-export const TRAITS_DATA = [
-  { label: 'Assertiveness', score: 6, maxScore: 10, tag: 'slightly aggressive (+1)', note: 'Will chase engineers for content. Won\'t steamroll leadership.' },
-  { label: 'Sociability', score: 6, maxScore: 10, tag: 'slightly outgoing (+1)', note: 'Balanced between heads-down work and people. The proposal coordinator sweet spot.' },
-  { label: 'Patience', score: 6, maxScore: 10, tag: 'slightly steady (+1)', note: 'Comfortable with routine. Can handle fire drills.' },
-  { label: 'Detail Orientation', score: 4.5, maxScore: 10, tag: 'center to slightly flexible (0 to -1)', note: 'Big-picture thinker. References disagree with this score. Peter called him "annoying." We\'ll go with Peter.' },
-  { label: 'Behavioral Adaptability', score: 5, maxScore: 10, tag: '5/10', note: 'Average chameleon ability. The gecko verdict stands.' },
-  { label: 'Emotional Control', score: 6, maxScore: 10, tag: '6/10', note: 'Logic over emotion. Straight to the point.' },
-  { label: 'Creativity', score: 5.5, maxScore: 10, tag: '5.5/10', note: 'Slightly conventional. Will run processes brilliantly. Won\'t invent them from scratch.' },
-];
-
 // ========== MULTICLASS REVEAL ==========
 export const MULTICLASS_SUBCLASSES = [
   { name: 'Operator', desc: 'manages the process' },
@@ -93,6 +42,12 @@ export const KOVA_EXPANDED = {
 
 // ========== CREW EXPANDED ==========
 export const CREW_EXPANDED = {
+  'Ben Epp': {
+    communication: 'Direct. If something needs fixing, he\'ll tell you. If something\'s good, he\'ll also tell you.',
+    howToWork: 'Ask questions. The more you ask in the first month, the faster you ramp. He\'d rather answer 50 questions now than fix 50 mistakes later.',
+    cares: 'Quality, efficiency, and making SC\'s proposals better than everyone else\'s. Also AI, mass timber innovation, and skiing.',
+    proTip: 'He built this entire website for your first day. That should tell you something about the kind of team you\'re joining.',
+  },
   'Gerald Epp': {
     communication: 'Email for formal requests. Teams for quick questions. In person for anything strategic. Does not like surprises. If bad news exists, deliver it early with a plan.',
     cares: 'Quality. Reputation. Precision. He built this company by being better than everyone else, not by being cheaper. Proposals reflect that standard.',
@@ -316,7 +271,6 @@ export const GLOSSARY_TERMS = [
 // ========== INTERVIEW QUOTES (random popups) ==========
 export const INTERVIEW_QUOTES = [
   { text: 'I kind of would isolate myself and be the master of everything.', attr: 'Dan, describing proposal workflow' },
-  { text: 'Even if he is stressed, nobody else will be able to tell.', attr: 'Angela\'s pre-screen notes' },
   { text: 'I\'m not trying to be the expert or be the engineer, but I need to know enough to be functional.', attr: 'Dan to Gerald' },
   { text: 'Object is to win them, not just hand them in.', attr: 'SC AXIOM' },
   { text: 'An itch that never got scratched.', attr: 'Dan, making mass timber sound like a medical condition' },

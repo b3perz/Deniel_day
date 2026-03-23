@@ -412,19 +412,26 @@ function BingoTab({ accentColor }) {
   );
 }
 
-// ==================== MAIN FIELD MANUAL ====================
-const TABS = [
-  { id: 'hazards', label: 'Hazards' },
-  { id: 'quiz', label: 'Quiz' },
-  { id: 'quiz-adv', label: 'Advanced Quiz' },
-  { id: 'rfp', label: 'RFP Generator' },
-  { id: 'bingo', label: 'Bingo' },
-  { id: 'deadline', label: 'Deadline Dash' },
-  { id: 'projects', label: 'Name That Project' },
-];
+// ==================== SECTION WRAPPER ====================
+function Section({ id, bg, children, title, subtitle }) {
+  return (
+    <section id={id} className={`py-20 px-4 md:px-8 ${bg}`}>
+      <div className="max-w-6xl mx-auto">
+        <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-2">
+          {title}
+        </h3>
+        <p className="text-center text-sm text-slate-400 mb-4">
+          {subtitle}
+        </p>
+        <div className="w-24 h-px bg-teal-500 mx-auto mb-10" />
+        {children}
+      </div>
+    </section>
+  );
+}
 
+// ==================== MAIN FIELD MANUAL (FULL SCROLL) ====================
 export default function FieldManual() {
-  const [activeTab, setActiveTab] = useState('hazards');
   const { selectedClass, getAccentColor } = useApp();
   const accentColor = getAccentColor(2);
   const subtitle = selectedClass === 'renaissance'
@@ -432,60 +439,93 @@ export default function FieldManual() {
     : DEFAULT_SUBTITLES.fieldManual;
 
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="py-16 px-4 md:px-8"
     >
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2 text-center">
+      {/* Master header */}
+      <div className="py-16 px-4 md:px-8 text-center">
+        <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">
           FIELD MANUAL
         </h2>
-        <p className="text-center text-sm mb-2 text-slate-400">
+        <p className="text-sm text-slate-400 mb-2">
           ORIENTATION EXERCISES
         </p>
-        <p className="text-center font-mono text-sm mb-10" style={{ color: accentColor }}>
+        <p className="font-mono text-sm" style={{ color: accentColor }}>
           {subtitle}
         </p>
-
-        {/* Tab bar */}
-        <div className="flex justify-center gap-1 mb-8">
-          {TABS.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 text-sm font-mono rounded-t-lg transition-all duration-200 ${
-                activeTab === tab.id
-                  ? 'text-white border-b-2'
-                  : 'text-slate-500 hover:text-slate-300'
-              }`}
-              style={activeTab === tab.id ? { borderColor: accentColor } : {}}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Tab content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-          >
-            {activeTab === 'hazards' && <HazardsTab accentColor={accentColor} />}
-            {activeTab === 'quiz' && <QuizTab accentColor={accentColor} />}
-            {activeTab === 'quiz-adv' && <ExpandedQuiz />}
-            {activeTab === 'rfp' && <RFPGeneratorTab accentColor={accentColor} />}
-            {activeTab === 'bingo' && <BingoTab accentColor={accentColor} />}
-            {activeTab === 'deadline' && <DeadlineDash />}
-            {activeTab === 'projects' && <NameThatProject />}
-          </motion.div>
-        </AnimatePresence>
       </div>
-    </motion.section>
+
+      {/* 1. HAZARDS */}
+      <Section
+        id="hazards"
+        bg="bg-red-950/20"
+        title="HAZARDS"
+        subtitle="Flip each card to reveal survival strategies for your first 90 days."
+      >
+        <HazardsTab accentColor={accentColor} />
+      </Section>
+
+      {/* 2. DELIVERY MODEL QUIZ */}
+      <Section
+        id="quiz"
+        bg="bg-slate-800/50"
+        title="DELIVERY MODEL QUIZ"
+        subtitle="Test your knowledge of SC delivery models and project methodology."
+      >
+        <QuizTab accentColor={accentColor} />
+      </Section>
+
+      {/* 3. ADVANCED QUIZ */}
+      <Section
+        id="quiz-adv"
+        bg="bg-slate-800/30"
+        title="DELIVERY MODEL ROULETTE — 5 Random Questions"
+        subtitle="A randomized gauntlet. No two rounds are the same."
+      >
+        <ExpandedQuiz />
+      </Section>
+
+      {/* 4. RFP GENERATOR */}
+      <Section
+        id="rfp"
+        bg="bg-slate-950/60"
+        title="CONTRADICTORY RFP GENERATOR"
+        subtitle="Pull the lever. Marvel at what procurement departments actually request."
+      >
+        <RFPGeneratorTab accentColor={accentColor} />
+      </Section>
+
+      {/* 5. BINGO */}
+      <Section
+        id="bingo"
+        bg="bg-slate-900"
+        title="FIRST WEEK BINGO"
+        subtitle="Mark each square as you encounter it. Diagonal counts."
+      >
+        <BingoTab accentColor={accentColor} />
+      </Section>
+
+      {/* 6. DEADLINE DASH */}
+      <Section
+        id="deadline"
+        bg="bg-slate-800/40"
+        title="DEADLINE DASH"
+        subtitle="Race against the clock. Every second counts in AEC."
+      >
+        <DeadlineDash />
+      </Section>
+
+      {/* 7. NAME THAT PROJECT */}
+      <Section
+        id="projects"
+        bg="bg-slate-900/70"
+        title="NAME THAT PROJECT"
+        subtitle="Can you match the codename to the real project? Prove it."
+      >
+        <NameThatProject />
+      </Section>
+    </motion.div>
   );
 }

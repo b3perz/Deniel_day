@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DOSSIER_FIELDS, NAME_MISSPELLINGS, CHARACTER_CLASSES } from '../data/constants';
-import { INTERCEPTED_COMMS, TRAITS_DATA, MULTICLASS_SUBCLASSES } from '../data/expansion';
+import { MULTICLASS_SUBCLASSES } from '../data/expansion';
 import { useApp } from '../contexts/AppContext';
 
 function NameGenerator() {
@@ -89,7 +89,7 @@ function ClassSelector() {
       </div>
 
       <p className="mt-6 text-slate-500 text-xs text-center leading-relaxed max-w-lg mx-auto">
-        Note: TRAITS Assessment Behavioral Adaptability Score: 5.0/10. The psychometric data says you are a gecko. We are overriding the data.
+        Class selection affects your experience throughout the site. Choose wisely. Or don't. We're overriding the data either way.
       </p>
     </div>
   );
@@ -132,114 +132,6 @@ function MulticlassReveal() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
-  );
-}
-
-function RedactedWord({ children }) {
-  const [revealed, setRevealed] = useState(false);
-  return (
-    <span
-      onClick={() => setRevealed(!revealed)}
-      className={`cursor-pointer transition-all duration-300 rounded px-0.5 ${
-        revealed
-          ? 'bg-transparent text-slate-300'
-          : 'bg-slate-300 text-transparent hover:bg-slate-400 select-none'
-      }`}
-    >
-      {children}
-    </span>
-  );
-}
-
-function InterceptedCommunications() {
-  return (
-    <div className="mt-16">
-      <h3 className="text-lg font-semibold text-white uppercase tracking-widest mb-8 text-center">
-        Intercepted Communications
-      </h3>
-
-      <div className="space-y-6">
-        {INTERCEPTED_COMMS.map((comm, ci) => (
-          <motion.div
-            key={ci}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: ci * 0.1 }}
-            className="paper-texture bg-slate-800 border border-slate-700 rounded-lg p-5 md:p-6 relative overflow-hidden"
-          >
-            <div
-              className="absolute top-3 right-3 text-emerald-500/50 font-mono text-[10px] font-bold uppercase tracking-wider border border-emerald-500/30 px-2 py-0.5 rounded"
-              style={{ transform: 'rotate(3deg)' }}
-            >
-              DECLASSIFIED
-            </div>
-
-            <div className="text-xs font-mono text-teal-400 mb-1">FROM: {comm.from}</div>
-            <div className="text-[10px] font-mono text-slate-500 mb-4">{comm.label}</div>
-
-            <div className="space-y-3">
-              {comm.quotes.map((q, qi) => {
-                const words = q.text.split(' ');
-                return (
-                  <p key={qi} className="text-slate-300 text-xs leading-relaxed italic">
-                    "{words.map((word, wi) => (
-                      <span key={wi}>
-                        {q.redactWords.includes(wi)
-                          ? <RedactedWord>{word}</RedactedWord>
-                          : word
-                        }
-                        {wi < words.length - 1 ? ' ' : ''}
-                      </span>
-                    ))}"
-                  </p>
-                );
-              })}
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function TraitsAssessment() {
-  return (
-    <div className="mt-16">
-      <h3 className="text-lg font-semibold text-white uppercase tracking-widest mb-8 text-center">
-        TRAITS Assessment
-      </h3>
-
-      <div className="max-w-2xl mx-auto space-y-5">
-        {TRAITS_DATA.map((trait, i) => (
-          <motion.div
-            key={trait.label}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
-          >
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-white text-sm font-medium">{trait.label}</span>
-              <span className="text-slate-500 text-[10px] font-mono">{trait.tag}</span>
-            </div>
-            <div className="h-3 bg-slate-800 rounded-full overflow-hidden mb-1">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${(trait.score / trait.maxScore) * 100}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.08 }}
-                className="h-full rounded-full"
-                style={{
-                  background: `linear-gradient(90deg, #2dd4bf, ${trait.score >= 6 ? '#22c55e' : trait.score >= 5 ? '#f59e0b' : '#ef4444'})`,
-                }}
-              />
-            </div>
-            <p className="text-slate-400 text-[11px] leading-relaxed">{trait.note}</p>
-          </motion.div>
-        ))}
-      </div>
     </div>
   );
 }
@@ -293,8 +185,6 @@ export default function AgentDossier() {
 
         <ClassSelector />
         <MulticlassReveal />
-        <InterceptedCommunications />
-        <TraitsAssessment />
       </div>
     </motion.section>
   );

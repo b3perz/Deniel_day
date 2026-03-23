@@ -10,6 +10,8 @@ const TRANSMISSIONS = [
   'STATUS: Your InDesign file has 0 errors. This feeling will not last.',
   'FIELD REPORT: Someone in Abbotsford just used the phrase "mass timber company." A correction has been issued.',
   'REMINDER: "Adopt or get left behind." \u2014 You, apparently.',
+  'NOTICE: Ben built this entire website. He wants you to know he could have been finishing a proposal instead.',
+  'INCOMING: Ben has shared 3 completed proposals in Notion for your review.',
 ];
 
 export default function AmbientTransmissions() {

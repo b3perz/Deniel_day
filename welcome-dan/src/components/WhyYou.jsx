@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { WHY_YOU_PARAGRAPHS, MARLO_QUOTE } from '../data/constants';
+import { WHY_YOU_PARAGRAPHS, WHY_YOU_CLOSER } from '../data/constants';
 import { useApp } from '../contexts/AppContext';
 
 const CLASS_LINES = {
@@ -13,7 +13,7 @@ export default function WhyYou() {
   const classLine = selectedClass ? CLASS_LINES[selectedClass] : null;
 
   return (
-    <section className="py-28 px-4 md:px-8" style={{ backgroundColor: '#1e2538' }}>
+    <section className="py-32 px-4 md:px-8" style={{ backgroundColor: '#1e2538' }}>
       <div className="max-w-2xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -22,15 +22,15 @@ export default function WhyYou() {
           transition={{ duration: 0.8 }}
           className="text-lg font-light text-slate-400 uppercase tracking-[0.2em] mb-16"
         >
-          Why You, Actually
+          Why You
         </motion.h2>
 
         <div className="space-y-10">
           {WHY_YOU_PARAGRAPHS.map((text, i) => (
             <motion.p
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               className="text-white text-lg md:text-xl leading-relaxed font-light"
@@ -41,8 +41,8 @@ export default function WhyYou() {
 
           {classLine && (
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-teal-400 text-lg md:text-xl leading-relaxed font-light"
@@ -57,9 +57,9 @@ export default function WhyYou() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-16 text-slate-500 text-sm italic"
+          className="mt-16 text-slate-500 text-sm"
         >
-          {MARLO_QUOTE}
+          {WHY_YOU_CLOSER}
         </motion.p>
       </div>
     </section>
