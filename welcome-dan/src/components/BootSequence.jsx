@@ -63,12 +63,12 @@ export default function BootSequence({ onComplete }) {
     lines.push('> RUNNING DIAGNOSTICS...');
     DIAGNOSTICS.forEach(d => {
       const bar = d.filled > 0 ? '\u2588'.repeat(d.filled) + '\u2591'.repeat(d.total - d.filled) : '\u2591'.repeat(d.total);
-      lines.push(`> ${d.label}${'.' .repeat(Math.max(1, 28 - d.label.length))} ${bar} ${d.status}`);
+      lines.push(`> ${d.label}${'.'.repeat(Math.max(1, 28 - d.label.length))} ${bar} ${d.status}`);
     });
     if (selectedClass && CLASS_DIAGNOSTICS[selectedClass]) {
       const cd = CLASS_DIAGNOSTICS[selectedClass];
       const bar = '\u2588'.repeat(cd.filled) + '\u2591'.repeat(cd.total - cd.filled);
-      lines.push(`> ${cd.label}${'.' .repeat(Math.max(1, 28 - cd.label.length))} ${bar} ${cd.status}`);
+      lines.push(`> ${cd.label}${'.'.repeat(Math.max(1, 28 - cd.label.length))} ${bar} ${cd.status}`);
     }
     lines.push('>');
     lines.push('> DIAGNOSIS: READY FOR DEPLOYMENT');
@@ -217,7 +217,7 @@ export default function BootSequence({ onComplete }) {
             <>
               {allDiags.slice(0, diagIndex + 1).map((d, i) => (
                 <div key={`diag-${i}`} className={`mb-1 ${d.flash && !diagAnimated[i] ? 'text-red-400' : 'text-emerald-400'}`}>
-                  {'> '}{d.label}{'.' .repeat(Math.max(1, 28 - d.label.length))}{' '}
+                  {'> '}{d.label}{'.'.repeat(Math.max(1, 28 - d.label.length))}{' '}
                   <ProgressBar filled={d.filled} total={d.total} animating={diagAnimated[i]} flash={d.flash} />
                   {diagAnimated[i] && <span className="ml-1">{d.status}</span>}
                 </div>
