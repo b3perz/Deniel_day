@@ -344,6 +344,19 @@ export const NAV_ITEMS = [
   { id: 'arsenal', label: 'ARSENAL' },
   { id: 'crew', label: 'CREW' },
   { id: 'field-manual', label: 'FIELD MANUAL' },
+  { id: 'inbox', label: 'INBOX' },
   { id: 'intel', label: 'INTEL' },
   { id: 'classified', label: 'CLASSIFIED' },
 ];
+
+// ========== FOOTER VARIATIONS ==========
+export const FOOTER_VARIATIONS = {
+  'dossier': 'Welcome to StructureCraft, Dan.',
+  'career': 'Welcome to StructureCraft, Dan. The best chapter starts now.',
+  'arsenal': 'Welcome to StructureCraft, Dan. Your tools are ready.',
+  'crew': 'Welcome to StructureCraft, Dan. Your team is ready.',
+  'field-manual': 'Welcome to StructureCraft, Dan. Training complete.',
+  'inbox': 'Welcome to StructureCraft, Dan. Your inbox awaits.',
+  'intel': 'Welcome to StructureCraft, Dan. You\'ve done your homework.',
+  'classified': 'Welcome to StructureCraft, Dan. You found everything.',
+};

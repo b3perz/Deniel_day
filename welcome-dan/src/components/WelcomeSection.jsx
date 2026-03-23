@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
+import { FOOTER_VARIATIONS } from '../data/expansion';
+import { useApp } from '../contexts/AppContext';
 
 export default function WelcomeSection() {
+  const { activePage } = useApp();
+  const headline = FOOTER_VARIATIONS[activePage] || FOOTER_VARIATIONS['dossier'];
+
   return (
     <section className="py-28 px-4 md:px-8 bg-black text-center">
       <div className="max-w-2xl mx-auto">
@@ -17,7 +22,7 @@ export default function WelcomeSection() {
           <div className="w-16 h-px bg-teal-400 mx-auto my-8" />
 
           <p className="text-2xl md:text-4xl font-semibold text-white mb-8">
-            Welcome to StructureCraft, Dan.
+            {headline}
           </p>
 
           <p className="text-slate-400 text-sm mb-12">

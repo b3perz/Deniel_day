@@ -6,6 +6,7 @@ import {
   BINGO_GRID, RENAISSANCE_SUBTITLES, DEFAULT_SUBTITLES,
 } from '../data/constants';
 import { useApp } from '../contexts/AppContext';
+import { DeadlineDash, ExpandedQuiz, NameThatProject } from './MiniGames';
 
 // ==================== HAZARDS TAB ====================
 function HazardCard({ hazard, accentColor }) {
@@ -415,8 +416,11 @@ function BingoTab({ accentColor }) {
 const TABS = [
   { id: 'hazards', label: 'Hazards' },
   { id: 'quiz', label: 'Quiz' },
+  { id: 'quiz-adv', label: 'Advanced Quiz' },
   { id: 'rfp', label: 'RFP Generator' },
   { id: 'bingo', label: 'Bingo' },
+  { id: 'deadline', label: 'Deadline Dash' },
+  { id: 'projects', label: 'Name That Project' },
 ];
 
 export default function FieldManual() {
@@ -474,8 +478,11 @@ export default function FieldManual() {
           >
             {activeTab === 'hazards' && <HazardsTab accentColor={accentColor} />}
             {activeTab === 'quiz' && <QuizTab accentColor={accentColor} />}
+            {activeTab === 'quiz-adv' && <ExpandedQuiz />}
             {activeTab === 'rfp' && <RFPGeneratorTab accentColor={accentColor} />}
             {activeTab === 'bingo' && <BingoTab accentColor={accentColor} />}
+            {activeTab === 'deadline' && <DeadlineDash />}
+            {activeTab === 'projects' && <NameThatProject />}
           </motion.div>
         </AnimatePresence>
       </div>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_ITEMS } from '../data/expansion';
 import { useApp } from '../contexts/AppContext';
+import SeattleClock from './SeattleClock';
 
 export default function NavBar({ onLogoClick }) {
   const { activePage, setActivePage, unlockCount } = useApp();
@@ -37,6 +38,8 @@ export default function NavBar({ onLogoClick }) {
             </button>
           ))}
         </div>
+
+        <SeattleClock />
 
         {/* Mobile hamburger */}
         <button
